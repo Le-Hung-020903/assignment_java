@@ -1,0 +1,23 @@
+<hibernate-configuration >
+    <session-factory name ="">
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.SQLServer2012Dialect
+        </property>
+        <property name="hibernate.connection.driver_class">
+            com.microsoft.sqlserver.jdbc.SQLServerDriver
+        </property>
+        <property name="hibernate.connection.url">
+            jdbc:sqlserver://ADMIN-PC\SQLEXPRESS:1433;databaseName=Lab05_Hibernate;encrypt=false
+        </property>
+        <property name="hibernate.connection.username">
+            sa
+        </property>
+        <property name="hibernate.connection.password">
+            12345a.
+        </property>
+        <property name="hibernate.show_sql">
+            true
+        </property>
+        <mapping class="com.example.lab05.Entity.EMPLOYEE"/>
+    </session-factory>
+</hibernate-configuration>
