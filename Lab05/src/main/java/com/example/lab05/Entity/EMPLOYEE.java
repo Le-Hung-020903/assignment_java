@@ -1,6 +1,7 @@
 package com.example.lab05.Entity;
 
 import javax.persistence.*;
+import java.io.File;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -19,7 +20,7 @@ public class EMPLOYEE {
     @Column(name = "HIRE_DATE")
     private Date HIRE_DATE;
     @Column(name = "IMAGE")
-    private String IMAGE;
+    private File IMAGE;
     @Column(name = "JOB")
     private String JOB;
     @Column(name = "DEPT_ID")
@@ -59,11 +60,11 @@ public class EMPLOYEE {
         this.HIRE_DATE = HIRE_DATE;
     }
 
-    public String getIMAGE() {
+    public File getIMAGE() {
         return IMAGE;
     }
 
-    public void setIMAGE(String IMAGE) {
+    public void setIMAGE(File IMAGE) {
         this.IMAGE = IMAGE;
     }
 

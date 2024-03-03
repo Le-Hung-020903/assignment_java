@@ -3,6 +3,7 @@ package com.example.lab05.Main;
 import com.example.lab05.Dao.IMPL.EmployedDAOIMPL;
 import com.example.lab05.Entity.EMPLOYEE;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,8 +24,8 @@ public class testSelect {
                     + "|" + item.getSALARY());
         }
         System.out.print("Nhập EMPLOYEE NAME : ");
-        String EMP_NAME = sc.next();
-        EMPLOYEE employee = new EmployedDAOIMPL().getEmployeeByEMP_NAME(EMP_NAME);
+        BigDecimal EMP_ID = sc.nextBigDecimal();
+        EMPLOYEE employee = new EmployedDAOIMPL().getEmployeeByEMP_NAME(EMP_ID);
         System.out.println(" "+employee.getEMP_ID()
                 +"|"+employee.getEMP_NAME()
                 +"|"+employee.getEMP_NO()

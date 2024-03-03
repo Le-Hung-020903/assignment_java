@@ -27,12 +27,12 @@ public class EmployedDAOIMPL implements EmployedDAO {
     }
 
     @Override
-    public EMPLOYEE getEmployeeByEMP_NAME(String EMP_NAME) {
+    public EMPLOYEE getEmployeeByEMP_NAME(BigDecimal id) {
         Session session = HibernateUtils.getSessionFactory().openSession();
         try{
             session.beginTransaction();
-            EMPLOYEE employee = (EMPLOYEE) session.createQuery("from EMPLOYEE where EMP_NAME = :EMP_NAME").setParameter("EMP_NAME", EMP_NAME).uniqueResult();
-            session.getTransaction();
+            EMPLOYEE employee = (EMPLOYEE) session.createQuery("from EMPLOYEE where EMP_ID = :id").setParameter("id", id).uniqueResult();
+            session.getTransaction().commit();
             session.close();
             return employee;
         }catch (Exception e){
@@ -44,16 +44,53 @@ public class EmployedDAOIMPL implements EmployedDAO {
 
     @Override
     public boolean insertEmployee(EMPLOYEE employee) {
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        try{
+            session.beginTransaction();
+            session.save(employee);
+            session.getTransaction().commit();
+            session.close();
+            return true;
+
+        }catch (Exception e){
+            e.printStackTrace();
+            session.close();
+        }
         return false;
     }
 
     @Override
     public boolean updateEmployee(EMPLOYEE employee) {
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        try{
+            session.beginTransaction();
+            session.update(employee);
+            session.getTransaction().commit();
+            session.close();
+            return true;
+
+        }catch (Exception e){
+            e.printStackTrace();
+            session.close();
+        }
         return false;
     }
 
     @Override
     public boolean deleteProduct(BigDecimal EMP_ID) {
+        Session session = HibernateUtils.getSessionFactory().openSession();
+        try{
+            session.beginTransaction();
+            int res = session.createQuery("delete  from EMPLOYEE where EMP_ID = :EMP_ID").setParameter("EMP_ID", EMP_ID).executeUpdate();
+            session.getTransaction().commit();
+            session.close();
+            if (res>0)
+                return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            session.close();
+        }
         return false;
     }
-}
+    }
+

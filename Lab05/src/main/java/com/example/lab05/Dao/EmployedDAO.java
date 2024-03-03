@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface EmployedDAO {
     public List<EMPLOYEE> getAllEmployee();
-    public EMPLOYEE getEmployeeByEMP_NAME(String EMP_NAME);
+    public EMPLOYEE getEmployeeByEMP_NAME(BigDecimal id);
 
     boolean insertEmployee(EMPLOYEE employee);
 
