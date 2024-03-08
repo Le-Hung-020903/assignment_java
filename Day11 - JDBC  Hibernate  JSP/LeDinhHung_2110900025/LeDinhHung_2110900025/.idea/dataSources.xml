@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="LEDinhHung_2110900025_Dbs@DESKTOP-MOTUJCG" uuid="2c94fbaf-9de1-47df-8fdb-c8b3808867fd">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://DESKTOP-MOTUJCG\SQLSERVER:1433;databaseName=LEDinhHung_2110900025_Dbs;encrypt=false</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
